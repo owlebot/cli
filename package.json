@@ -12,8 +12,8 @@
 	},
 	"private": true,
 	"bin": {
-		"launch": "bin/init-local",
-		"launch-docker": "bin/init-docker"
+		"launch": "./bin/init-local.sh",
+		"launch-docker": "./bin/init-docker.sh"
 	},
 	"dependencies": {
 		"dotenv": "^16.0.2"
