@@ -14,7 +14,6 @@ Node version: [Node v18+](https://nodejs.org/en/download/)
 Start the index.js, feeding all environment variables for docker env.  
 `launch index.js`  
 
-
 Start the index.js, feeding all environment variables for local env.  
 `launch-docker index.js`  
 
