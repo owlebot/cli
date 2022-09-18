@@ -1,21 +1,22 @@
 # cli
 
-Template repo for future node projects
+CLI repo for all Owlebot projects.  
 
 ## Setup
 
 Node version: [Node v18+](https://nodejs.org/en/download/)
 
-**Requirements:**  
-Copy `secret.template.json` as `secret.json`.  
-
 **Install dependencies:**  
 `yarn`  
 
-**Start application:**  
-`yarn start`  
-
 ## Features
+
+Start the index.js, feeding all environment variables for docker env.  
+`launch index.js`  
+
+
+Start the index.js, feeding all environment variables for local env.  
+`launch-docker index.js`  
 
 ## Contributions
 

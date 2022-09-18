@@ -10,7 +10,6 @@
 	"engines": {
 		"node": ">=18.0.0"
 	},
-	"private": true,
 	"bin": {
 		"launch": "./bin/init-local.sh",
 		"launch-docker": "./bin/init-docker.sh"
