@@ -1,0 +1,38 @@
+{
+	"name": "@owlebot/cli",
+	"version": "0.1.0",
+	"description": "Owlebot CLI.",
+	"author": "Khaaz <khaaz.dev@gmail.com>, Xerstom <xerstomdev@outlook.fr>",
+	"link": "https://github.com/owlebot/cli",
+	"main": "./src/index.js",
+	"type": "commonjs",
+	"license": "MIT",
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"private": true,
+	"bin": {
+		"load-env": "node -r ./src/loadenv"
+	},
+	"dependencies": {
+		"dotenv": "^16.0.2"
+	},
+	"devDependencies": {
+		"@owlebot/eslint-config": "owlebot/eslint-config#main",
+		"eslint": "^8.23.0"
+	},
+	"scripts": {
+		"lint": "eslint src/**/*.js tests/**/*.js",
+		"test": "yarn run start",
+		"start": "node -r ./src/loadenv tests/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/owlebot/cli.git"
+	},
+	"bugs": {
+		"url": "https://github.com/owlebot/cli/issues"
+	},
+	"homepage": "https://github.com/owlebot/cli#readme",
+	"keywords": []
+}
