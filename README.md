@@ -1,4 +1,4 @@
-# template
+# cli
 
 Template repo for future node projects
 
