@@ -12,7 +12,8 @@
 	},
 	"private": true,
 	"bin": {
-		"load-env": "node -r ./src/loadenv"
+		"launch": "bin/init-local",
+		"launch-docker": "bin/init-docker"
 	},
 	"dependencies": {
 		"dotenv": "^16.0.2"
@@ -23,8 +24,7 @@
 	},
 	"scripts": {
 		"lint": "eslint src/**/*.js tests/**/*.js",
-		"test": "yarn run start",
-		"start": "node -r ./src/loadenv tests/index.js"
+		"test": "yarn run lint"
 	},
 	"repository": {
 		"type": "git",
