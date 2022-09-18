@@ -23,7 +23,7 @@
 		"eslint": "^8.23.0"
 	},
 	"scripts": {
-		"lint": "eslint src/**/*.js tests/**/*.js",
+		"lint": "eslint src/**/*.js",
 		"test": "yarn run lint"
 	},
 	"repository": {
