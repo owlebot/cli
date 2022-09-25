@@ -11,7 +11,7 @@ const DIR_ROOT = process.argv[3];
 const ENV = process.argv[4];
 
 let CWD_ROOT = CWD;
-while (!fs.existsSync(path.join(CWD, "package.json") ) ) {
+while (!fs.existsSync(path.join(CWD_ROOT, "package.json") ) ) {
 	CWD_ROOT = path.join(CWD_ROOT, "..");
 }
 
@@ -23,7 +23,7 @@ if (ENV === "local") {
 
 // Load locals default
 const defaultEnv = path.join(CWD_ROOT, "./.env.defaults");
-fs.existsSync(defaultEnv) && dotenv.config( { path: defaultEnv, override: true } );
+fs.existsSync(defaultEnv) && dotenv.config( { path: defaultEnv } );
 
 
 // Load locals override
