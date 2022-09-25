@@ -3,29 +3,35 @@ const path  = require("node:path");
 
 const dotenv = require("dotenv");
 
-const CWD = process.argv[2];
+const CWD = process.argv[1];
 // eslint-disable-next-line no-unused-vars
-const DIR_ROOT = process.argv[3];
+const DIR_ROOT = process.argv[2];
 
 // "local", "docker
-const ENV = process.argv[4];
+const ENV = process.argv[3];
+
+console.log("ENV: ", ENV);
 
 let CWD_ROOT = CWD;
 while (!fs.existsSync(path.join(CWD_ROOT, "package.json") ) ) {
 	CWD_ROOT = path.join(CWD_ROOT, "..");
 }
+console.log("CWD_ROOT: ", CWD_ROOT);
 
 if (ENV === "local") {
+	console.log("Loading globals...");
 	// Load globals (endpoints)
 	const pathToMain = path.join(CWD_ROOT, "../../main/");
 	dotenv.config( { path: path.join(pathToMain, "env/.env") } );
 }
 
 // Load locals default
+console.log("Loading local defaults...");
 const defaultEnv = path.join(CWD_ROOT, "./.env.defaults");
 fs.existsSync(defaultEnv) && dotenv.config( { path: defaultEnv } );
 
 
 // Load locals override
+console.log("Loading locals...");
 const localEnv = path.join(CWD_ROOT, "./.env");
 fs.existsSync(localEnv) && dotenv.config( { path: localEnv, override: true } );
