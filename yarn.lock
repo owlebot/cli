@@ -319,7 +319,8 @@
 
 "@owlebot/eslint-config@owlebot/eslint-config#main":
   version "1.0.0"
-  resolved "https://codeload.github.com/owlebot/eslint-config/tar.gz/b374ee50a371732efa13295a1f2f9b5de1599e7f"
+  uid "8a79ceda4e706779bf3b52910d9cf9373c355256"
+  resolved "https://codeload.github.com/owlebot/eslint-config/tar.gz/8a79ceda4e706779bf3b52910d9cf9373c355256"
   dependencies:
     "@babel/core" "^7.19.0"
     "@babel/eslint-parser" "^7.18.9"
