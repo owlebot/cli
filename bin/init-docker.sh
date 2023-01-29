@@ -4,7 +4,7 @@ CWD="$PWD"
 DIR="$(dirname $BASH_SOURCE)"
 DIR_ROOT="${DIR}/../"
 
-echo "CWD: ${CWD}"
-echo "DIR_ROOT: ${DIR_ROOT}"
-
-node -r "${DIR_ROOT}/src/loadenv.js" $CWD $DIR_ROOT "docker"
+# $1 is the file to run
+# $2 is --watch or --inspect
+# -r load env var via the loadenv script
+node $2 -r "${DIR_ROOT}/src/loadenv.js" $1 $CWD "docker"

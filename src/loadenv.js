@@ -3,11 +3,9 @@ const path  = require("node:path");
 
 const dotenv = require("dotenv");
 
-const CWD = process.argv[1];
-// eslint-disable-next-line no-unused-vars
-const DIR_ROOT = process.argv[2];
+const CWD = process.argv[2];
 
-// "local", "docker
+// ["local", "docker]
 const ENV = process.argv[3];
 
 console.log("ENV: ", ENV);
@@ -16,7 +14,7 @@ let CWD_ROOT = CWD;
 while (!fs.existsSync(path.join(CWD_ROOT, "package.json") ) ) {
 	CWD_ROOT = path.join(CWD_ROOT, "..");
 }
-console.log("CWD_ROOT: ", CWD_ROOT);
+console.log("ROOT: ", CWD_ROOT);
 
 if (ENV === "local") {
 	console.log("Loading globals...");
