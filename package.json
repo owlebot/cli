@@ -17,7 +17,7 @@
 		"dotenv": "^16.0.2"
 	},
 	"devDependencies": {
-		"@owlebot/eslint-config": "owlebot/eslint-config#main",
+		"@owlebot/eslint-config": "^1.0.0",
 		"eslint": "^8.23.0"
 	},
 	"scripts": {
