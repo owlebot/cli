@@ -1,15 +1,16 @@
 #!/usr/bin/env sh
 
 PACKAGE_LOCATION="@owlebot/cli"
+NODE_MODULES="node_modules"
 
 SCRIPT=$(readlink -f "$0")
 DIR=$(dirname "$SCRIPT")
 
 # Check if the path contains "node_modules"
-if [[ "$DIR" =~ "node_modules" ]]; then
+if [[ "$DIR" =~ "$NODE_MODULES" ]]; then
   echo "CASE: package installed"
-  DIR_ROOT="${path%%node_modules*}"
-  DIR_ROOT="${DIR_ROOT}/node_modules/${PACKAGE_LOCATION}"
+  DIR_ROOT="${DIR%%$NODE_MODULES*}"
+  DIR_ROOT="${DIR_ROOT}/${NODE_MODULES}/${PACKAGE_LOCATION}"
 else
   echo "CASE: package linked"
   DIR_ROOT=$(dirname "$DIR")
