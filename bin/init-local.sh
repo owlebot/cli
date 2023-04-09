@@ -7,14 +7,17 @@ SCRIPT=$(readlink -f "$0")
 DIR=$(dirname "$SCRIPT")
 
 # Check if the path contains "node_modules"
-if [[ "$DIR" =~ "$NODE_MODULES" ]]; then
-  echo "CASE: package installed"
-  DIR_ROOT="${DIR%%$NODE_MODULES*}"
-  DIR_ROOT="${DIR_ROOT}/${NODE_MODULES}/${PACKAGE_LOCATION}"
-else
-  echo "CASE: package linked"
-  DIR_ROOT=$(dirname "$DIR")
-fi
+case "$DIR" in
+  *"$NODE_MODULES"*)
+    echo "CASE: package installed"
+    DIR_ROOT="${DIR%%$NODE_MODULES*}"
+    DIR_ROOT="${DIR_ROOT}/${NODE_MODULES}/${PACKAGE_LOCATION}"
+    ;;
+  *)
+    echo "CASE: package linked"
+    DIR_ROOT=$(dirname "$DIR")
+    ;;
+esac
 
 # $1 is the file to run
 # $2 is --watch or --inspect
