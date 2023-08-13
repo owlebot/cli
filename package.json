@@ -1,6 +1,6 @@
 {
 	"name": "@owlebot/cli",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"description": "Owlebot CLI.",
 	"author": "Khaaz <khaaz.dev@gmail.com>, Xerstom <xerstomdev@outlook.fr>",
 	"link": "https://github.com/owlebot/cli",
@@ -11,7 +11,11 @@
 		"node": ">=18.0.0"
 	},
 	"bin": {
-		"launch": "./bin/init-local.sh"
+		"deploy": "./bin/deploy.sh",
+		"docker-build": "./bin/docker-build.sh",
+		"docker-push": "./bin/docker-push.sh",
+		"launch": "./bin/init-local.sh",
+		"secret-pull": "./bin/secret-pull.sh"
 	},
 	"dependencies": {
 		"dotenv": "^16.0.2"
