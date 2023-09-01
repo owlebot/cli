@@ -24,7 +24,7 @@ set -x
 helm repo add owlebot https://owlebot.github.io/helm-repo/
 helm repo update
 
-helm upgrade --install infisical-$PACKAGE_NAME owlebot/Infisical  -f $PACKAGE_ROOT/k8s/helm.yaml
+helm upgrade --install infisical-$PACKAGE_NAME owlebot/Infisical -f $PACKAGE_ROOT/k8s/helm.yaml
 
 set +x
 
@@ -34,7 +34,7 @@ if [ -n "$platforms" ]; then
   for platform in ${platforms//,/ }; do
     set -x
 
-    helm upgrade --install $PACKAGE_NAME-$platform owlebot/App --set app.platform=$platform  -f $PACKAGE_ROOT/k8s/helm.yaml
+    helm upgrade --install $PACKAGE_NAME-$platform owlebot/App --set app.platform=$platform -f $PACKAGE_ROOT/k8s/helm.yaml
     
     set +x
   done

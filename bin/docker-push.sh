@@ -7,6 +7,6 @@ echo "Executing [docker:push] for \"$PACKAGE_NAME\". Path: $PACKAGE_ROOT"
 
 set -x
 
-docker push registry.gitlab.com/owlebot/docker-registry/$PACKAGE_NAME
+docker push registry.gitlab.com/owlebot/docker-registry/$PACKAGE_NAME:latest
 
 set +x
