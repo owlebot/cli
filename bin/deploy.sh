@@ -6,9 +6,14 @@ PACKAGE_NAME=$(basename "$PACKAGE_ROOT")
 echo "Executing [deploy] for \"$PACKAGE_NAME\". Path: $PACKAGE_ROOT"
 
 platforms=""
+env="production"
 
 while [ $# -gt 0 ]; do
     case "$1" in
+        --env)
+            env="$2"
+            shift 2
+            ;;
         --platforms)
             platforms="$2"
             shift 2
@@ -34,7 +39,7 @@ if [ -n "$platforms" ]; then
   for platform in ${platforms//,/ }; do
     set -x
 
-    helm upgrade --install $PACKAGE_NAME-$platform owlebot/App --set app.platform=$platform -f $PACKAGE_ROOT/k8s/helm.yaml
+    helm upgrade --install $PACKAGE_NAME-$platform owlebot/App --set app.nodeEnv=$env --set app.platform=$platform -f $PACKAGE_ROOT/k8s/helm.yaml
     
     set +x
   done
@@ -44,7 +49,7 @@ else
 
   set -x
 
-  helm upgrade --install $PACKAGE_NAME owlebot/App  -f $PACKAGE_ROOT/k8s/helm.yaml
+  helm upgrade --install $PACKAGE_NAME owlebot/App --set app.nodeEnv=$env -f $PACKAGE_ROOT/k8s/helm.yaml
   
   set +x
 fi
