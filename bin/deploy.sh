@@ -35,7 +35,7 @@ set +x
 
 if [ -n "$platforms" ]; then
   echo "Deploying app for $platforms"
-  IFS=, ;
+  IFS=','
   for platform in ${platforms[@]}; do
     set -x
 
