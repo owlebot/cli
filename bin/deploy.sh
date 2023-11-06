@@ -35,8 +35,8 @@ set +x
 
 if [ -n "$platforms" ]; then
   echo "Deploying app for $platforms"
-
-  for platform in ${platforms//,/ }; do
+  IFS=, ;
+  for platform in ${platforms[@]}; do
     set -x
 
     helm upgrade --install $PACKAGE_NAME-$platform owlebot/App --set app.nodeEnv=$env --set app.platform=$platform -f $PACKAGE_ROOT/k8s/helm.yaml
