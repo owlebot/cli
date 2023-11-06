@@ -1,6 +1,6 @@
 {
 	"name": "@owlebot/cli",
-	"version": "0.7.3",
+	"version": "0.7.4",
 	"description": "Owlebot CLI.",
 	"author": "Khaaz <khaaz.dev@gmail.com>, Xerstom <xerstomdev@outlook.fr>",
 	"link": "https://github.com/owlebot/cli",
