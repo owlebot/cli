@@ -38,7 +38,7 @@ if [ -n "$platforms" ]; then
 
   IFS=','
   # POSIX compliant substituion that works in /bin/sh
-  for platform in $(echo "$platforms" | tr ',' ' '); do
+  for platform in $(printf "%s" "$platforms"); do
     set -x
 
     helm upgrade --install $PACKAGE_NAME-$platform owlebot/App --set app.nodeEnv=$env --set app.platform=$platform -f $PACKAGE_ROOT/k8s/helm.yaml
