@@ -19,8 +19,6 @@ done
 
 echo "Executing [secret:pull] for \"$PACKAGE_NAME\". Path: $PACKAGE_ROOT. Env: $ENV"
 
-echo $1
-
 set -x
-infisical export --path="$PACKAGE_NAME" --env=$ENV > $PACKAGE_ROOT/.env
+infisical export --path="/$PACKAGE_NAME" --env=$ENV
 set +x
